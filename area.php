@@ -2,29 +2,29 @@
 
 function convert_to_square_meters($value, $from_unit) {
   switch($from_unit) {
-    case 'square inches':
-      return $value * 0.0254;
+    case 'square_inches':
+      return $value * pow(0.0254,2);
       break;
-    case 'square feet':
-      return $value * 0.3048;
+    case 'square_feet':
+      return $value * pow(0.3048,2);
       break;
-    case 'square yards':
-      return $value * 0.9144;
+    case 'square_yards':
+      return $value * pow(0.9144,2);
       break;
-    case 'square miles':
-      return $value * 1609.344;
+    case 'square_miles':
+      return $value * pow(1609.344,2);
       break;
-    case 'square millimeters':
-      return $value * 0.001;
+    case 'square_millimeters':
+      return $value * pow(0.001,2);
       break;
-    case 'square centimeters':
-      return $value * 0.01;
+    case 'square_centimeters':
+      return $value * pow(0.01,2);
       break;
-    case 'square meters':
+    case 'square_meters':
       return $value;
       break;
-    case 'square kilometers':
-      return $value * 1000;
+    case 'square_kilometers':
+      return $value * pow(1000,2);
       break;
     default:
       return "Unsupported unit.";
@@ -33,29 +33,29 @@ function convert_to_square_meters($value, $from_unit) {
   
 function convert_from_square_meters($value, $to_unit) {
   switch($to_unit) {
-    case 'square inches':
-      return $value / 0.0254;
+    case 'square_inches':
+      return $value / pow(0.0254,2);
       break;
-    case 'square feet':
-      return $value / 0.3048;
+    case 'square_feet':
+      return $value / pow(0.3048,2);
       break;
-    case 'square yards':
-      return $value / 0.9144;
+    case 'square_yards':
+      return $value / pow(0.9144,2);
       break;
-    case 'square miles':
-      return $value / 1609.344;
+    case 'square_miles':
+      return $value / pow(1609.344,2);
       break;
-    case 'square millimeters':
-      return $value / 0.001;
+    case 'square_millimeters':
+      return $value / pow(0.001,2);
       break;
-    case 'square centimeters':
-      return $value / 0.01;
+    case 'square_centimeters':
+      return $value / pow(0.01,2);
       break;
-    case 'square meters':
+    case 'square_meters':
       return $value;
       break;
-    case 'square kilometers':
-      return $value / 1000;
+    case 'square_kilometers':
+      return $value / pow(1000,2);
       break;
     default:
       return "Unsupported unit.";
