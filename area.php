@@ -1,29 +1,29 @@
 <?php
 
-function convert_to_meters($value, $from_unit) {
+function convert_to_square_meters($value, $from_unit) {
   switch($from_unit) {
-    case 'inches':
+    case 'square inches':
       return $value * 0.0254;
       break;
-    case 'feet':
+    case 'square feet':
       return $value * 0.3048;
       break;
-    case 'yards':
+    case 'square yards':
       return $value * 0.9144;
       break;
-    case 'miles':
+    case 'square miles':
       return $value * 1609.344;
       break;
-    case 'millimeters':
+    case 'square millimeters':
       return $value * 0.001;
       break;
-    case 'centimeters':
+    case 'square centimeters':
       return $value * 0.01;
       break;
-    case 'meters':
+    case 'square meters':
       return $value;
       break;
-    case 'kilometers':
+    case 'square kilometers':
       return $value * 1000;
       break;
     default:
@@ -31,30 +31,30 @@ function convert_to_meters($value, $from_unit) {
   }
 }
   
-function convert_from_meters($value, $to_unit) {
+function convert_from_square_meters($value, $to_unit) {
   switch($to_unit) {
-    case 'inches':
+    case 'square inches':
       return $value / 0.0254;
       break;
-    case 'feet':
+    case 'square feet':
       return $value / 0.3048;
       break;
-    case 'yards':
+    case 'square yards':
       return $value / 0.9144;
       break;
-    case 'miles':
+    case 'square miles':
       return $value / 1609.344;
       break;
-    case 'millimeters':
+    case 'square millimeters':
       return $value / 0.001;
       break;
-    case 'centimeters':
+    case 'square centimeters':
       return $value / 0.01;
       break;
-    case 'meters':
+    case 'square meters':
       return $value;
       break;
-    case 'kilometers':
+    case 'square kilometers':
       return $value / 1000;
       break;
     default:
@@ -62,9 +62,9 @@ function convert_from_meters($value, $to_unit) {
   }
 }
 
-function convert_length($value, $from_unit, $to_unit) {
-  $meter_value = convert_to_meters($value, $from_unit);
-  $new_value = convert_from_meters($meter_value, $to_unit);
+function convert_area($value, $from_unit, $to_unit) {
+  $meter_value = convert_to_square_meters($value, $from_unit);
+  $new_value = convert_from_square_meters($meter_value, $to_unit);
   return $new_value;
 }
 
@@ -78,7 +78,7 @@ if($_POST['submit']) {
   $from_unit = $_POST['from_unit'];
   $to_unit = $_POST['to_unit'];
   
-  $to_value = convert_length($from_value, $from_unit, $to_unit);
+  $to_value = convert_area($from_value, $from_unit, $to_unit);
 }
 
 ?>
