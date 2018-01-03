@@ -26,7 +26,7 @@ function convert_to_meters($value, $from_unit) {
       return $value * 1000;
       break ;
     default:
-      return "Unsupported unit."
+      return "Unsupported unit.";
   }
 
   // if($from_unit == 'feet') {
