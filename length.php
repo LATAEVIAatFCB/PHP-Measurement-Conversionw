@@ -1,9 +1,38 @@
 <?php
 function convert_to_meters($value, $from_unit) {
-  if($from_unit == 'feet') {
-    return $value * 0.3048;
+  switch($from_unit) {
+    case 'inches':
+      return $value * 0.0254;
+      break;
+    case 'feet':
+      return $value * 0.3048;
+      break;
+    case 'yards':
+      return $value * 0.9144;
+      break ;
+    case 'miles':
+      return $value * 1609.344;
+      break ;
+    case 'millimeters':
+      return $value * 0.001;
+      break ;   
+    case 'centimeters':
+      return $value * 0.01;
+      break ;
+    case 'meters':
+      return $value;
+      break ; 
+    case 'kilometers':
+      return $value * 1000;
+      break ;
+    default:
+      return "Unsupported unit."
   }
-  return "Unsupported unit.";
+
+  // if($from_unit == 'feet') {
+  //   return $value * 0.3048;
+  // }
+  // return "Unsupported unit.";
 }
 
 $from_value = '';
