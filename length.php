@@ -12,7 +12,7 @@ function convert_to_meters($value, $from_unit) {
       break ;
     case 'miles':
       return $value * 1609.344;
-      break ;
+      break ; 
     case 'millimeters':
       return $value * 0.001;
       break ;   
@@ -62,6 +62,12 @@ function convert_from_meters($value, $to_unit) {
   }
 }
 
+function convert_length($from_value, $from_unit, $to_unit) {
+  $meter_value = convert_to_meters($from_value, $from_unit);
+  $new_value = convert_from_meters($meter_value, $to_unit);
+  return $new_value;
+}
+
 $from_value = '';
 $from_unit = '';
 $to_unit  = '';
@@ -72,9 +78,7 @@ if($_POST['submit']) {
   $from_unit = $_POST['from_unit'];
   $to_unit  = $_POST['to_unit'];
 
-  // $to_value = convert_to_meters($from_value, $from_unit);
-  $to_value = convert_from_meters($from_value, $to_unit);
-
+  $to_value = convert_length($from_value, $from_unit, $to_unit);
 }
 
 ?>
